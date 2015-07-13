@@ -14,13 +14,13 @@ cd ~/working
 git clone git://github.com/upggr/nginx.git
 git clone git://github.com/upggr/nginx-rtmp-module.git
 git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
+sudo chmod +x /etc/init.d/nginx
+sudo /usr/sbin/update-rc.d -f nginx defaults
 cd ~/working/nginx
 sudo chmod +x configure
 ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module
 sudo make && make install
-cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
-sudo chmod +x /etc/init.d/nginx
-sudo /usr/sbin/update-rc.d -f nginx defaults
 mkdir /usr/local/nginx/html/hls/
 mkdir /usr/local/nginx/html/dash/
 mkdir /usr/local/nginx/html/dash/tmp/
