@@ -1,1 +1,1 @@
-curl -sL http://tools.upg.gr/rtmpserver/nginxbyupg.txt | sudo bash -
+curl -sL https://raw.githubusercontent.com/upggr/UPG.GR-MEDIA-SERVER/master/nginx.sh | sudo bash -

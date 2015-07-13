@@ -11,33 +11,28 @@ sudo ln -s ../fpm/php.ini
 sudo service php5-fpm start
 sudo mkdir ~/working
 cd ~/working
-sudo wget http://nginx.org/download/nginx-1.8.0.tar.gz
-git clone git://github.com/arut/nginx-rtmp-module.git
-mv nginx-rtmp-module rtmp
-sudo tar -zxvf nginx-1.8.0.tar.gz
-cd nginx-1.8.0
-./configure --with-http_ssl_module --add-module=../rtmp --with-debug
-sudo make 
-sudo make install
+git clone git://github.com/upggr/nginx.git
+git clone git://github.com/upggr/nginx-rtmp-module.git
+git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
+cd nginx
+sudo chmod +x configure
+./configure --with-http_ssl_module --add-module=../nginx-rtmp-module
+sudo make && make install
 cd ~/
-sudo rm -rf ~/working
-sudo wget -O /etc/init.d/nginx http://tools.upg.gr/rtmpserver/conf/nginx.txt 
 sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 mkdir /usr/local/nginx/html/hls/
 mkdir /usr/local/nginx/html/dash/
 mkdir /usr/local/nginx/html/dash/tmp/
 mkdir /usr/local/nginx/html/hls/tmp/
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /usr/local/nginx/conf/nginx.conf
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /etc/nginx/nginx.conf
+cp ~/working/UPG.GR-MEDIA-SERVER/www /usr/local/nginx/html
 rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
 sudo wget -O /usr/local/nginx/conf/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
 sudo wget -O /etc/nginx/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
-sudo wget -O /usr/local/nginx/html/index.php http://tools.upg.gr/rtmpserver/www/index.txt
-sudo wget -O /usr/local/nginx/html/flashlsFlowPlayer.swf http://tools.upg.gr/rtmpserver/www/flashlsFlowPlayer.txt
-sudo wget -O /usr/local/nginx/html/favicon.ico http://tools.upg.gr/rtmpserver/www/favicon.ico
-sudo wget -O /usr/local/nginx/html/listview-grid.css http://tools.upg.gr/rtmpserver/www/listview-grid.css
-sudo wget -O /usr/local/nginx/html/stream.xml http://tools.upg.gr/rtmpserver/www/stream.xml
-sudo wget -O /usr/local/nginx/html/w.php http://tools.upg.gr/rtmpserver/www/w.txt
-nmap -sT -O localhost
 sudo service nginx start
 nmap -sT -O localhost
+sudo rm -rf ~/working
