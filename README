@@ -1,1 +1,2 @@
+Run the following command on a freshly installed Ubuntu 14 or 15 Server on digital ocean
 curl -sL https://raw.githubusercontent.com/upggr/UPG.GR-MEDIA-SERVER/master/nginx.sh | sudo bash -

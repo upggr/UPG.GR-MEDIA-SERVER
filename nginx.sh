@@ -14,21 +14,20 @@ cd ~/working
 git clone git://github.com/upggr/nginx.git
 git clone git://github.com/upggr/nginx-rtmp-module.git
 git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
-cd nginx
+cd ~/working/nginx
 sudo chmod +x configure
 ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module
 sudo make && make install
-cd ~/
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
 sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 mkdir /usr/local/nginx/html/hls/
 mkdir /usr/local/nginx/html/dash/
 mkdir /usr/local/nginx/html/dash/tmp/
 mkdir /usr/local/nginx/html/hls/tmp/
-cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /usr/local/nginx/conf/nginx.conf
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /etc/nginx/nginx.conf
-cp ~/working/UPG.GR-MEDIA-SERVER/www /usr/local/nginx/html
+cp -a ~/working/UPG.GR-MEDIA-SERVER/www/. /usr/local/nginx/html
 rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
 sudo wget -O /usr/local/nginx/conf/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
@@ -36,3 +35,4 @@ sudo wget -O /etc/nginx/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.con
 sudo service nginx start
 nmap -sT -O localhost
 sudo rm -rf ~/working
+shutdown -r now
