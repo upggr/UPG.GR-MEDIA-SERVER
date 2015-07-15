@@ -1,5 +1,5 @@
 #!/bin/bash
-#sudo apt-get update -y
+sudo apt-get update -y
 sudo apt-get install build-essential nmap libpcre3 git libpcre3-dev libssl-dev unzip software-properties-common php5-common php5-cli php5-fpm lynx nmap -y
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 1935 -j ACCEPT
@@ -33,6 +33,5 @@ ln -s /usr/local/nginx/sbin/nginx nginx
 sudo wget -O /usr/local/nginx/conf/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
 sudo wget -O /etc/nginx/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
 sudo service nginx start
-nmap -sT -O localhost
 sudo rm -rf ~/working
 shutdown -r now
