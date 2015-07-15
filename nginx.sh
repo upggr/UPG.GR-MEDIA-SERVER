@@ -27,9 +27,9 @@ mkdir /usr/local/nginx/html/dash/tmp/
 mkdir /usr/local/nginx/html/hls/tmp/
 touch /etc/nginx/nginx.conf
 touch /usr/local/nginx/conf/nginx.conf
-ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /usr/local/nginx/conf/nginx.conf
-cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /etc/nginx/nginx.conf
+ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
+sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/conf/nginx.conf
 cp -a ~/working/UPG.GR-MEDIA-SERVER/www/. /usr/local/nginx/html
 rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
