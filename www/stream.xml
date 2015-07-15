@@ -9,7 +9,7 @@
                hdposterurl="pkg:/images/hdvideos.png">
       <item type="video"
                   title="Stream 1"
-                  sdposterurl="<img src="testing.png"
+                  sdposterurl="testing.png"
                   hdposterurl="testing.png"
                   genre1=""
                   url="http://localhost/hls/stream1.m3u8"
