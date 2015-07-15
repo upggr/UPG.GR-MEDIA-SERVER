@@ -19,7 +19,7 @@ sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 cd ~/working/nginx
 sudo chmod +x configure
-./configure --with-http_ssl_module --add-module=../nginx-rtmp-module
+./configure --with-http_ssl_module --add-module=../nginx-rtmp-module --add-module=/path/to/nginx-rtmp-module/hls
 sudo make && make install
 mkdir /usr/local/nginx/html/hls/
 mkdir /usr/local/nginx/html/dash/
