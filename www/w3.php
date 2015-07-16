@@ -64,33 +64,30 @@ nav a:hover {
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1463191647329292";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="container">
   <section class="starter-template">
     <h3><?php echo $title;?> by <a href="http://upg.gr" target="_blank">upg.gr</a></h3>
     
-    
+    <?php $rtmp = str_replace("http","rtmp",$m3u8);
+        $rtmp = substr($rtmp,0,-5);?>
 <div data-live="true"
      data-ratio="0.5625"
-     class="flowplayer fixed-controls">
+     class="flowplayer" data-rtmp="<?php echo $rtmp;?>" fixed-controls>
  
-   <video data-title="Live stream" autoplay>
-<source type="application/x-mpegurl"
-        src="<?php echo $m3u8; ?>">
+   <video data-title="Live stream" preload="none" autoplay>
+<source  type="application/x-mpegurl" src="<?php echo $m3u8; ?>">
    </video>
  
 </div>
     
-        <h5><?php include('share.php'); ?></h5>
+
     <h5><?php include('alts.php');?></h5>
+    <br>
+<?php echo $rtmp;?>
+<br>
+<?php echo $m3u8;?>
+
     <h5><a href="http://upg.gr/greek-tv-by-upg-gr-for-roku/" target="_blank">Watch on your Television Set</a></h5>
 <h5><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">

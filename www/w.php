@@ -90,7 +90,7 @@ nav a:hover {
 <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/video.js/dist/video-js/video.dev.js"></script>
 <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-media-sources/src/videojs-media-sources.js"></script>
-<script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.17.1/videojs.hls.min.js"></script>
+<script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.17.5/videojs.hls.min.js"></script>
 <script>
       var player = videojs('example-video');
     </script>
