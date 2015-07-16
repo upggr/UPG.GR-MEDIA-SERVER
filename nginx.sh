@@ -36,6 +36,7 @@ rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
 sudo wget -O /usr/local/nginx/conf/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
 sudo wget -O /etc/nginx/nginx.conf http://tools.upg.gr/rtmpserver/conf/nginx.conf
+sudo apt-get install ffmpeg -y
 sudo service nginx start
 sudo rm -rf ~/working
 shutdown -r now
