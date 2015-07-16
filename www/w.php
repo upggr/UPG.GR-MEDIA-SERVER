@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+$m3u8= $_GET["m3u8"];
+$poster= $_GET["poster"];
+$title= $_GET["channel"];
+?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,12 +68,12 @@ nav a:hover {
     
     <video id=example-video width="100%" height="300" autoplay=true poster="<?php echo $poster;?>" preload=auto class="video-js vjs-default-skin" controls>
       <source
-             src="http://localhost/hls/livestream.m3u8 "
+             src="<?php echo $m3u8;?>"
              type="application/x-mpegURL">
     </video>
     
-        <h5>8</h5>
-    <h5><9</h5>
+        <h5><?php include('share.php'); ?></h5>
+    <h5><?php include('alts.php');?></h5>
     <h5><a href="http://upg.gr/greek-tv-by-upg-gr-for-roku/" target="_blank">Watch on your Television Set</a></h5>
 <h5><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -90,6 +95,6 @@ nav a:hover {
       var player = videojs('example-video');
     </script>
     
-  0
+    <php include('analytics.php'); ?>
 </body>
 </html>
