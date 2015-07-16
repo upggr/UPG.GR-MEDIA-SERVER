@@ -36,7 +36,7 @@ foreach($item as $item2) {
 	$hlsurl = $item2->attributes()->url;
 	
 //	echo "<li><a href='".$hlsurl."' target='_blank'><img src='".$imgurl."' class='ui-li-thumb'><h2>".$title."</h2><p>".$title."</p><p class='ui-li-aside'>Watch Live</p></a></li>";
-echo "<li><a href='w.php?m3u8=".$hlsurl."&poster=".$imgurl."&type=hls&channel=".$title."' target='_blank'><img src='".$imgurl."' class='ui-li-thumb'><h2>".$title."</h2><p>".$title."</p><p class='ui-li-aside'>Watch Live</p></a></li>";
+echo "<li><a href='w3.php?m3u8=".$hlsurl."&poster=".$imgurl."&type=hls&channel=".$title."' target='_blank'><img src='".$imgurl."' class='ui-li-thumb'><h2>".$title."</h2><p>".$title."</p><p class='ui-li-aside'>Watch Live</p></a></li>";
 }
 }
 ?>
