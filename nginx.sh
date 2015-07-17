@@ -36,4 +36,4 @@ rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
 sudo service nginx start
 sudo rm -rf ~/working
-shutdown -r -t 10
+shutdown -r now
