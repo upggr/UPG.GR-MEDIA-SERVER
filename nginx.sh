@@ -26,7 +26,6 @@ mkdir /usr/local/nginx/html/hls/
 mkdir /usr/local/nginx/html/dash/
 mkdir /usr/local/nginx/html/dash/tmp/
 mkdir /usr/local/nginx/html/hls/tmp/
-touch /etc/nginx/nginx.conf
 touch /usr/local/nginx/conf/nginx.conf
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /usr/local/nginx/conf/nginx.conf
 ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
