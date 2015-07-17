@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update -y
-sudo apt-get install build-essential nmap libpcre3 git libpcre3-dev libssl-dev unzip software-properties-common php5-common php5-cli php5-fpm lynx nmap -y
+sudo apt-get install build-essential nmap libpcre3 git libpcre3-dev libssl-dev unzip software-properties-common php5-common php5-cli php5-fpm lynx nmap ffmpeg -y
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 1935 -j ACCEPT
 mkdir /var/log/nginx/
@@ -34,7 +34,6 @@ sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/conf/nginx.conf
 sed -i -- 's/localhost/'"$ip"'/g' /usr/local/nginx/html/stream.xml
 rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
-sudo apt-get install ffmpeg -y
 sudo service nginx start
 sudo rm -rf ~/working
 shutdown -r -t 10
