@@ -37,4 +37,4 @@ ln -s /usr/local/nginx/sbin/nginx nginx
 sudo apt-get install ffmpeg -y
 sudo service nginx start
 sudo rm -rf ~/working
-shutdown -r now
+shutdown -r -t 10
