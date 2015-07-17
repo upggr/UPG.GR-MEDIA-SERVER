@@ -62,8 +62,8 @@ nav a:hover {
     <h3><?php echo $title;?> by <a href="http://upg.gr" target="_blank">upg.gr</a></h3>
     <div data-live="true"
      data-ratio="0.5625"
-     class="flowplayer" data-rtmp="<?php echo $rtmp;?>" fixed-controls>
-      <video data-title="Live stream" preload="none" autoplay>
+     class="flowplayer">
+      <video data-title="<?php echo $title;?>" controls="controls" autoplay>
         <source  type="application/x-mpegurl" src="<?php echo $m3u8; ?>">
       </video>
     </div>
