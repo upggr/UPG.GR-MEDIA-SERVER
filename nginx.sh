@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo apt-get update -y
-sudo apt-get install build-essential nmap libpcre3 git libpcre3-dev libssl-dev unzip software-properties-common php5-common php5-cli php5-fpm lynx nmap ffmpeg -y
+sudo apt-get install build-essential libpcre3 git libpcre3-dev libssl-dev software-properties-common php5-common php5-cli php5-fpm -y
+iptables -I INPUT -p tcp --dport 22 -j ACCEPT
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp --dport 1935 -j ACCEPT
 mkdir /var/log/nginx/
