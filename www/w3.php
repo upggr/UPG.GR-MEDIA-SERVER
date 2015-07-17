@@ -7,7 +7,6 @@ $poster= $_GET["poster"];
 $title= $_GET["channel"];
 $rtmp = str_replace("http","rtmp",$m3u8);
 $rtmp = substr($rtmp,0,-5);?>
-?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
