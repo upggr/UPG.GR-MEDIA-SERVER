@@ -16,11 +16,12 @@
 
 <body>
 <?php
-$m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"];
+$m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"]; $rtmp = str_replace("http","rtmp",$m3u8); $rtmp = substr($rtmp,0,-5);
 ?>
 <div class="wrapper">
   <div class="videocontent">
     <video id=example-video class="video-js vjs-default-skin vjs-fullscreen" preload=none  poster="<?php echo $poster;?>" width=auto height=auto  autoplay=true>
+    <source src="<?php echo $rtmp; ?>" type="rtmp/mp4">
       <source src="<?php echo $m3u8;?>" type="application/x-mpegURL">
     </video>
   </div>
@@ -30,5 +31,8 @@ $m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"];
 <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-media-sources/src/videojs-media-sources.js"></script> 
 <script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.17.1/videojs.hls.js"></script> 
 <script> var player = videojs('example-video');</script>
+<script>
+  videojs.options.techOrder = ['flash', 'html5'];
+</script>
 </body>
 </html>
