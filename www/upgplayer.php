@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPG Media Player</title>
+<link href="https://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<style>
+.video-js {
+	padding-top: 56.25%
+}
+.vjs-fullscreen {
+	padding-top: 0px
+}
+</style>
+</head>
+
+<body>
+<?php
+$m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"];
+?>
+<div class="wrapper">
+  <div class="videocontent">
+    <video id=example-video class="video-js vjs-default-skin vjs-fullscreen" preload=none  poster="<?php echo $poster;?>" width=auto height=auto  autoplay=true>
+      <source src="<?php echo $m3u8;?>" type="application/x-mpegURL">
+    </video>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<script src="http://videojs.github.io/videojs-contrib-hls/node_modules/video.js/dist/video-js/video.dev.js"></script> 
+<script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-media-sources/src/videojs-media-sources.js"></script> 
+<script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.17.1/videojs.hls.js"></script> 
+<script> var player = videojs('example-video');</script>
+</body>
+</html>
