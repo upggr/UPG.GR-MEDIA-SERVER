@@ -28,7 +28,8 @@ mkdir /usr/local/nginx/html/dash/tmp/
 mkdir /usr/local/nginx/html/hls/tmp/
 touch /usr/local/nginx/conf/nginx.conf
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.conf /usr/local/nginx/conf/nginx.conf
-ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
+ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )
+#ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
 cp -a ~/working/UPG.GR-MEDIA-SERVER/www/. /usr/local/nginx/html
 sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/conf/nginx.conf
 sed -i -- 's/localhost/'"$ip"'/g' /usr/local/nginx/html/stream.xml
