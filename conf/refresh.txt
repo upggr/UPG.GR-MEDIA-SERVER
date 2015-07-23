@@ -1,0 +1,8 @@
+sudo mkdir ~/working
+cd ~/working
+git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
+cp -a ~/working/UPG.GR-MEDIA-SERVER/www/. /usr/local/nginx/html
+#ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
+sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/html/vlc.m3u
+sed -i -- 's/localhost/'"$ip"'/g' /usr/local/nginx/html/stream.xml
+sudo rm -rf ~/working

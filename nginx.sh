@@ -16,6 +16,8 @@ git clone git://github.com/upggr/nginx.git
 git clone git://github.com/upggr/nginx-rtmp-module.git
 git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
 cp ~/working/UPG.GR-MEDIA-SERVER/conf/nginx.txt /etc/init.d/nginx
+cp ~/working/UPG.GR-MEDIA-SERVER/conf/refresh.txt /etc/rc6.d/K99_refresh
+sudo chmod +x /etc/rc6.d/K99_refresh
 sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 cd ~/working/nginx
@@ -32,6 +34,7 @@ ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$
 #ip=$(ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
 cp -a ~/working/UPG.GR-MEDIA-SERVER/www/. /usr/local/nginx/html
 sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/conf/nginx.conf
+sed -i -- 's/replaceip/'"$ip"'/g' /usr/local/nginx/html/vlc.m3u
 sed -i -- 's/localhost/'"$ip"'/g' /usr/local/nginx/html/stream.xml
 rm -f /usr/local/nginx/conf/nginx.conf.default
 ln -s /usr/local/nginx/sbin/nginx nginx
