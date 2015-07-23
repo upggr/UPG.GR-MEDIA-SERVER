@@ -8,13 +8,11 @@ rtmp://replaceip:1935/hls/stream3
 #EXTINF:0,Stream4 rtmp
 rtmp://replaceip:1935/hls/stream4
 #EXTINF:0,Stream1 hls
-http://replaceip:1935/hls/stream1
+http://replaceip:1935/hls/stream1.hls
 #EXTINF:0,Stream2 hls
-http://replaceip:1935/hls/stream2
+http://replaceip:1935/hls/stream2.hls
 #EXTINF:0,Stream3 hls
-http://replaceip:1935/hls/stream3
+http://replaceip:1935/hls/stream3.hls
 #EXTINF:0,Stream4 hls
-http://replaceip:1935/hls/stream4
-#EXTINF:0,Test Stream hls
-http://ert3-lh.akamaihd.net/i/live_1@329807/master.m3u8
+http://replaceip:1935/hls/stream4.hls
 
