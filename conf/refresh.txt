@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo mkdir ~/working
 cd ~/working
 sudo git clone git://github.com/upggr/UPG.GR-MEDIA-SERVER.git
