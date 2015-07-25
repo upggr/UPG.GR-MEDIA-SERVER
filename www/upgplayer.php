@@ -35,9 +35,5 @@ $m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"]; $rtmp 
 <script>
   videojs.options.techOrder = ['flash', 'html5'];
 </script>
-<br>
-<br>
-<br>
-test
 </body>
 </html>
