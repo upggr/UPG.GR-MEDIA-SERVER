@@ -11,3 +11,5 @@ This will use port 8088 for all the video references. This way you can have your
 
 If you need to get the latest version of the interface run : /etc/cron.daily/refreshwww
 There is a daily cron for this.
+
+See more about this on my personal website : http://upg.gr/rtmp-hls-nginx-php-server-the-easy-way/ 
