@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>UPG Media Player</title>
-<link href="https://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<link href="http://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
 <style>
 .video-js {
 	padding-top: 56.25%
@@ -27,10 +27,10 @@ $m3u8= $_GET["m3u8"]; $poster= $_GET["poster"]; $title= $_GET["channel"]; $rtmp 
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> 
 <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/video.js/dist/video-js/video.dev.js"></script> 
 <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-media-sources/src/videojs-media-sources.js"></script> 
-<script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v0.17.1/videojs.hls.js"></script> 
+<script src="https://github.com/videojs/videojs-contrib-hls/releases/download/v2.0.1/videojs-contrib-hls.js"></script> 
 <script> var player = videojs('example-video');</script>
 <script>
   videojs.options.techOrder = ['flash', 'html5'];
